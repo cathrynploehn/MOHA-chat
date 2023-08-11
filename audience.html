@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+  <head>
+    <title>CATCHAT</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="feed the rhizome">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.2/semantic.min.css" integrity="sha512-n//BDM4vMPvyca4bJjZPDh7hlqsQ7hqbP9RH18GF2hTXBY5amBwM2501M0GPiwCU/v9Tor2m13GOTFjk00tkQA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link href="semantic.min.css" rel="stylesheet"> -->
+    <link href="styles/styles.css" rel="stylesheet">
+  </head>
+  <body>
+
+    
+
+    <div id="container" >
+
+      <div id="content">
+        <div class="contentContainer" id="chat">
+          <div id="chatLog" ></div>
+          <form id="chatEntry" class="ui form">
+              <div class="field">
+                <label>username</label>
+                <div class="ui inverted transparent input">
+                  <input id="nameInput"  type="text" placeholder="...">
+                </div> 
+              </div>
+              <div class="field">
+                <label>message</label>
+                <div class="ui  action inverted transparent input">
+                  <input id="chatInput"  type="text" placeholder="Type message...">
+                </div>            
+              </div>
+                <div id="chatSend" class="ui fluid inverted button ">send
+                </div>
+          </form>                   
+        </div>
+        
+      </div>
+
+    </div>
+    <script src = "node_modules/clientside-require/dist/bundle.js"></script>
+    <script src = "node_modules/clientside-require/dist/bundle.js"></script>
+    <script src = "node_modules/jquery/dist/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.2/semantic.min.js" integrity="sha512-5cguXwRllb+6bcc2pogwIeQmQPXEzn2ddsqAexIBhh7FO1z5Hkek1J9mrK2+rmZCTU6b6pERxI7acnp1MpAg4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src = "/socket.io/socket.io.js"></script>
+    <script src = "chat.js"></script>
+
+    <script>
+
+      var socket = io();
+      let initialized = false;
+
+      let data; 
+
+      socket.on("init", (d) => {
+
+        if(!initialized){
+          
+          initialized = true;
+          data = d;
+          
+          let chat = new Chat({
+            log: data.chat,
+          }, socket);
+
+        }        
+      })
+
+
+    </script>
+  </body>
+</html>
