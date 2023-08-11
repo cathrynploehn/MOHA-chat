@@ -1,0 +1,57 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+$base-font-color: white;
+$base-font-family: monospace;
+$base-font-size: 16px;
+$base-font-size: 1.05rem;
+$base-bg-color: black;
+// $base-active-color: #313e06;
+$base-active-color: rbg(100, 100, 100, 2);
+
+$base-border: 0.5px solid white; 
+
+$base-padding: 15px;
+
+$error-color: #580504;
+$success-color: #FF00FF;
+$success-border: 0.5px solid $success-color;
+
+$max-screen-size: 500px;
+
+.base-styles {
+    font-family: $base-font-family;
+    color: $base-font-color;
+    font-size: $base-font-size;
+    background-color: $base-bg-color;
+    border-radius: 0;
+}
+
+.twofifty {
+  width: 250px;
+}
+
+.error-state {
+  color: $base-font-color !important;
+  background-color: $error-color !important;
+}
+
+.success-state {
+  color: $success-color !important;
+}
+
+.base-box-shadow {
+  box-shadow: 2px 2px 0px 1px $base-font-color !important;
+  -webkit-box-shadow: 2px 2px 0px 1px $base-font-color !important;
+  -moz-box-shadow: 2px 2px 0px 1px $base-font-color !important;
+}
+
+body, html,a,.ui.inverted.button, .ui.form:not(.inverted) .field > label:not(.button), #showTitle, #hideStory, .ui.toast-container .toast-box .ui.toast, .toast-container .ui.header, .listen, .listen:hover, .listen:visited,  .ui.segment,  .ui.fullscreen.modal > .close, .ui.modal > .content, .ui.modal, .ui.modal > .header,  .ui.inverted.form input[type="text"], .ui.form .field.error label, .ui.button, .ui.button:focus, .ui.inverted.button.active, .ui.inverted.button:focus, .backDwn, .backDwn:hover, .backDwn:visited,.backUp, .backUp:hover, .backUp:visited, .rhizomeCard, .rhizomeCard:hover, .rhizomeCard:visited, .ui.dropdown .menu, .ui.dropdown .menu .selected.item, .ui.dropdown.selected, .ui.dropdown .menu > .item, .ui.dropdown .menu > .item:hover, .ui.selection.dropdown, .ui.selection.visible.dropdown > .text:not(.default), .ui.inverted.form input:not([type]), h2, h3, h4, .ui.inverted.menu, .ui.inverted.menu .item, .ui.black.message, .ui.inverted.message, .ui.form :focus::placeholder, .ui.form textarea:focus, input::selection, .ui.form textarea, textarea::selection, .ui.menu, #chat, p, .ui.form .field > label, .ui.form .inline.fields .field > label, .ui.input.focus>input,.ui.input>input:focus, .ui.transparent.inverted.input > input  {
+  @extend .base-styles; 
+}
+
+
+
+.base-btn, .ui.modal, .ui.modal > .header {
+  @extend .base-box-shadow;
+  border: $base-border; 
+}

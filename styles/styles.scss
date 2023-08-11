@@ -1,0 +1,420 @@
+@import'base.scss';
+
+.ui.form .field.error .ui.dropdown, .ui.form .field.error .ui.dropdown .text, .ui.error.message, .ui.error.message .header, .ui.form .field.error .ui.dropdown, .ui.form .field.error .ui.dropdown .item, .ui.form .field.error .ui.dropdown .text, .ui.form .fields.error .field .ui.dropdown, .ui.form .fields.error .field .ui.dropdown .item, .ui.form .field.error .ui.dropdown .menu .active.item, .ui.form .fields.error .field .ui.dropdown .menu .active.item {
+  @extend .error-state;
+}
+
+.published {
+  * {
+    color: $success-color !important;
+  } 
+  border: $success-border !important;
+}
+
+.base-btn, .ui.modal, .ui.modal > .header {
+  @extend .base-box-shadow;
+  border: $base-border; 
+}
+
+
+.header {
+  font-family: $base-font-family;
+  color: $base-font-color;  
+  font-size: 1.75rem;
+  line-height: 1.05em;
+}
+
+.contentWidth {
+  max-width: $max-screen-size !important;
+  margin-right: auto !important;
+  margin-left: auto !important;  
+}
+
+
+.creditsScreen {
+  height: 100%; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    text-align: center;    
+  }
+
+  p, div, a {
+    width: 100%;
+    text-align: center;
+    max-width: $max-screen-size !important;
+    // @extend .contentWidth;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+#story {
+
+  overflow-y: scroll;
+
+  * {
+    @extend .contentWidth;
+  }
+
+  .ui.segment {
+    border: $base-border;
+    margin: 0 2* $base-padding;
+  }
+}
+
+
+
+
+body, html {
+
+  min-height: 100%; 
+  font: 16px; 
+  overflow: hidden;
+}
+
+body, #container {
+    display: flex;
+    justify-content: stretch;
+}
+
+#container {
+  flex-direction: column;
+  width: 100%;
+}
+
+body, html, .ui.form.success .success.message, .ui.form.success .success.message p, .ui.success.message .header, .ui.inverted.button, .ui.form:not(.inverted) .field > label:not(.button), #showTitle, #hideStory, .ui.toast-container .toast-box .ui.toast, .toast-container .ui.header, .listen, .listen:hover, .listen:visited,  .ui.segment,  .ui.fullscreen.modal > .close, .ui.modal > .content, .ui.modal, .ui.modal > .header,  .ui.inverted.form input[type="text"], .ui.form .field.error label, .ui.button, .ui.button:focus, .ui.inverted.button.active, .ui.inverted.button:focus, .backDwn, .backDwn:hover, .backDwn:visited,.backUp, .backUp:hover, .backUp:visited, .rhizomeCard, .rhizomeCard:hover, .rhizomeCard:visited, .ui.dropdown .menu, .ui.dropdown .menu .selected.item, .ui.dropdown.selected, .ui.dropdown .menu > .item, .ui.dropdown .menu > .item:hover, .ui.selection.dropdown, .ui.selection.visible.dropdown > .text:not(.default), .ui.inverted.form input:not([type]), h2, h3, h4, .ui.inverted.menu, .ui.inverted.menu .item, .ui.black.message, .ui.inverted.message, .ui.form :focus::placeholder, .ui.form textarea:focus, input::selection, .ui.form textarea, textarea::selection, .ui.menu, #chat, p, .ui.form .field > label, .ui.form .inline.fields .field > label, .ui.input.focus>input,.ui.input>input:focus, .ui.transparent.inverted.input > input  {
+  @extend .base-styles; 
+}
+
+.ui.form.success .success.message {
+
+  border: $success-border;
+
+  .header, p {
+    @extend .success-state;
+    margin-bottom: 0 !important;
+  }
+}
+
+
+.ui.modal .content {
+
+  .description {
+    max-width: 100%;
+  }
+  > .image img {
+    max-width: 100%;
+  }
+}
+
+.ui.left.center.popup::before, .ui.right.center.popup::before, .ui.top.popup::before,  .ui.popup > .header, .ui.bottom.popup::before, .ui.popup {
+  background-color: #000;
+  color: $base-font-color;
+  font-family: $base-font-family;
+}
+
+.ui.button.catMsg, .ui.button.catMsg:hover, .ui.button.catMsg:focus, .ui.button.catMsg:active, .catMsg.ui.inverted.button.active, .catMsg.ui.inverted.button:focus {
+  border-radius: 100rem;
+  background-color: $base-active-color;
+  margin: 0 calc($base-padding/2);
+  // padding: calc($base-padding / 2) calc($base-padding / 2) !important;
+  padding: 6.5px 10.5px 7px 10.5px !important;
+  min-width: 25px; 
+
+}
+
+.catMsg {
+  font-size: calc($base-font-size * .25); 
+}
+
+.ui.button.modalBtn {
+  z-index: 10;
+}
+
+h1 {
+ @extend .header; 
+}
+
+.ui.selection.dropdown, .ui.selection.dropdown:hover, .ui.inverted.form input[type="text"] {
+  border: $base-border;
+}
+
+
+
+#nav {
+  margin-bottom: 0;
+  border: $base-border;
+  
+  #notification a {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 5px;
+  }
+
+  .item {
+    border-radius: 0;
+  }
+
+  .active.item  {
+    background-color: $base-active-color;
+  } 
+
+  .item::before {
+      background-color: white;
+  }
+}
+
+#content {
+    padding-top: calc(2 * $base-padding); 
+  flex-grow: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  overflow: hidden;
+  
+  // & > div {
+  //   display: none;
+  // }
+}
+
+.contentContainer {
+  flex-grow: 2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  overflow: hidden;
+
+  .content-wrapper {
+    overflow-y: scroll;
+    height: 100%;
+  }
+}
+
+#contentNav {
+  display: none;
+  position: sticky;
+  top: $base-padding;
+  right: $base-padding;
+  float: right;
+  flex-direction: column;
+  z-index: 1;
+  
+  > * {
+    padding: $base-padding;
+    font-size: 2em;
+    @extend .base-btn;
+  }
+}
+
+.storyScreen {
+  padding: 0 2* $base-padding 2* $base-padding 2 * $base-padding;
+  width: 100%;
+}
+
+#share {
+  textarea {
+    border: $base-border;
+    background: transparent;
+  }
+  
+
+
+
+  canvas {
+    z-index: 3;
+    // border: $base-border;
+  }
+
+
+  .promptScreen {
+    // min-height: 100%;
+    // padding: 0;
+    padding: $base-padding 0;
+    display: none; 
+    
+    p, h1, .form, .ui.button {
+      @extend .contentWidth;
+      max-width: 250px !important;
+    }
+
+    img {
+      max-width: 250px;
+    }
+
+    .promptSegment {
+      margin: 0 !important;
+      width: 100%;   
+      padding-top: $base-padding * 2;
+
+      .promptContent {
+        position: relative;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      #plantMap {
+        height: 250px;
+        background-color: green;
+        max-width: 500px;
+        width: 100%;
+        flex-shrink: 0;
+      }
+
+      .carousel {
+        // margin: $base-padding*2;
+        overflow-x: auto;
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        align-items: center;
+
+        img {
+          // width: 100%;
+          max-width: 415px;
+          margin-right: $base-padding;
+        }
+
+      }
+      
+      #arrow {
+        // position: absolute;
+        color: white;
+        margin-top: $base-padding;
+        bottom: 20px;
+        background-color: black;
+        display: inline-block;
+      }
+
+      p:last-child {
+        margin: inherit
+              }
+
+    }
+    
+  } 
+  
+
+  #status {
+    // border-bottom: $base-border;
+    text-align: center;
+    padding: $base-padding;
+    &::after {
+      // content: "~~~~~~~~~~~~~~~~~~"
+    }
+
+    img {
+      height: 60px;
+      margin: 0 0 $base-padding 0
+    }
+  }
+
+  
+
+    // #rhizomeNavI {
+    //   align-self: flex-start;
+    // }
+
+    // #rhizomeNavII {
+    //   align-self: center;
+    // }
+
+    // #rhizomeNavIII {
+    //   align-self: flex-end;
+    // }
+
+    // #rhizomeNavIV {
+    //   align-self: center;
+    // }
+
+
+  
+}
+
+
+#chat {
+  padding: $base-padding;
+  
+  #chatEntry {
+    border-top: $base-border;
+
+    .fields {
+      margin: 0;
+    }
+  }
+
+  #chatLog {
+    flex-grow: 2;
+    overflow-y: scroll;
+    padding: 0 0 $base-padding 0 ;
+  }
+
+  .username {
+    text-decoration: underline;
+    font-weight: 800;
+
+  }
+}
+
+
+
+#rhizomeNavWrapper {
+  @extend .contentWidth;
+  display: block;
+  display: flex;
+  flex-direction: column;
+  // height: 100%;
+}
+
+.rhizomeCard, .listen, #hideStory, #showTitle {
+    // position: sticky;
+    @extend .base-btn;
+
+    display: inline-block;
+    padding: $base-padding;
+
+    &.disabled {
+      border: none;
+      pointer-events: none;
+      color: transparent;
+      box-shadow: none !important;
+    }
+  }
+  #rhizomeNav {
+    padding: $base-padding * 2;
+    flex-grow: 2;
+    display: flex;
+    flex-direction: row;
+    // flex-flow: column wrap;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    > * {
+      margin: calc($base-padding/2);
+    }
+}
+
+#readerNav {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+  div {
+    width: 100%;
+    border-bottom:  $base-border;
+    padding: $base-padding;
+  }
+  a {
+    @extend .base-btn;
+    display: inline-block;
+    padding: $base-padding;
+  }
+}
