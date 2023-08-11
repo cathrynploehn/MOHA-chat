@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/90403c29-7606-475d-a49a-f88ceafaa1a9/resourceGroups/DefaultResourceGroup-EUS2/providers/Microsoft.Web/sites/moha-chat",
+    "appService.deploySubpath": "."
+}

@@ -1,4 +1,7 @@
 var express = require('express');
+
+var port = process.env.PORT || 80;
+
 var app = express();
 
 var http = require('http');
@@ -31,7 +34,7 @@ io.on('connection', function(socket){
 
 });	
 
-serverSsl.listen(80, function(){
+serverSsl.listen(process.env.PORT, function(){
   console.log('listening on *:80');
   console.log('open http://localhost:80');
 });
